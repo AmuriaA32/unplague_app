@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './App.sass';
 import AddInformMeasure from './containers/AddInformMeasure'
 import MainMap from './components/MainMap'
 import InformedStatus from './containers/InformedStatus';
@@ -18,19 +19,33 @@ class App extends React.Component {
     const position = [this.state.lat, this.state.lng];
     return (
       <div className="app">
-        <div className="header">Coronafighter</div>
+        <section className="hero is-dark">
+          <div className="hero-body">
+            <div className="container">
+              <h1 className="title">
+                Corona Fighter
+      </h1>
+              <h2 className="subtitle">
+                Can you beat the Virus?
+      </h2>
+            </div>
+          </div>
+        </section>
         <div className="content">
           <div className="eventboard">
-            <EventFeed/>
+            <EventFeed />
           </div>
-          <MainMap/>
+          <MainMap />
           <div className="interactionboard">
             Interaction Board
             <AddInformMeasure />
           </div>
         </div>
         <div className="footer">Statusinfo<InformedStatus></InformedStatus></div>
-      </div> 
+
+      </div>
+
+
     );
   }
 }
